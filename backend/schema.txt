@@ -1,0 +1,39 @@
+Event Schema {
+    id: bigint, auto-generated
+    title: string
+    start: DateTime
+    end: DateTime
+    backgroundColor: string
+    status: string, P for Pending, A for approved by HRDU
+    type: Link to Event Type Schema by event-type-id
+    withPR: boolean
+    createdAt: DateTime
+    updatedAt: DateTime
+    approvedAt: DateTime
+    withPRAt: DateTime
+    section: Link to Section Schema by section-id
+    participants: Link to Participants Schema by participants-id
+}
+
+Event Type Schema {
+    id: int, auto-generated
+    name: string
+    requirePR: boolean
+    createdAt: DateTime
+    isActive: boolean
+}
+
+Participants Schema {
+    id: int, auto-generated
+    name: string
+    internal: boolean
+    isActive: boolean
+}
+
+Section Schema {
+    id: int, auto-generated
+    name: string
+    cluster: string
+    division: string
+    isActive: boolean
+}
