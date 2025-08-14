@@ -30,6 +30,9 @@ export class EventEntity {
   @Column({type: 'char', default: 'P'})
   status: string;
 
-  @ManyToOne((type) => SectionEntity, (section) => section.event)
+  @ManyToOne((type) => SectionEntity, (section) => section.events)
   section: SectionEntity;
+
+  @ManyToOne((type) => EventTypeEntity, (eventType) => eventType.events)
+  eventType: EventTypeEntity;
 }

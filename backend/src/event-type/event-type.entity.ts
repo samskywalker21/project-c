@@ -1,4 +1,5 @@
-import {Entity, PrimaryGeneratedColumn, Column} from 'typeorm';
+import {EventEntity} from 'src/event/event.entity';
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from 'typeorm';
 
 @Entity('tbl_task-type')
 export class EventTypeEntity {
@@ -13,4 +14,7 @@ export class EventTypeEntity {
 
   @Column({type: 'boolean', default: true})
   isActive: boolean;
+
+  @OneToMany((type) => EventEntity, (event) => event.eventType)
+  events: EventEntity[];
 }

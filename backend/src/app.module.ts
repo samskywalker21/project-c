@@ -7,6 +7,7 @@ import {EventTypeModule} from './event-type/event-type.module';
 import {ParticipantModule} from './participant/participant.module';
 import {SectionModule} from './section/section.module';
 import {TypeOrmModule} from '@nestjs/typeorm';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import {TypeOrmModule} from '@nestjs/typeorm';
     EventTypeModule,
     ParticipantModule,
     SectionModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

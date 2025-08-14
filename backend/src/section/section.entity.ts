@@ -1,5 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from 'typeorm';
 import {EventEntity} from 'src/event/event.entity';
+import {UserEntity} from 'src/user/user.entity';
 
 @Entity('tbl_section')
 export class SectionEntity {
@@ -19,5 +20,8 @@ export class SectionEntity {
   isActive: boolean;
 
   @OneToMany(() => EventEntity, (event) => event.section)
-  event: EventEntity[];
+  events: EventEntity[];
+
+  @OneToMany(() => UserEntity, (user) => user.section)
+  users: UserEntity[];
 }
